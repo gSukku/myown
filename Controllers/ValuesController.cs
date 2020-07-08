@@ -42,9 +42,9 @@ namespace Sample.Controllers
         public ActionResult Post([FromBody] object value)
         {
              var myJObject = JObject.Parse(value.ToString());
-           // var validator =new ValuesValidator();
-          // var str= Newtonsoft.Json.JsonConvert.SerializeObject(value);
-           //Type t = typeof(value.ti_id_generic); 
+           var validator =new ValuesValidator();
+           var str= Newtonsoft.Json.JsonConvert.SerializeObject(value);
+          //  Type t = typeof(value); 
            var json = JToken.Parse("{ ti_type : \"1\",   ti_id_type_generic: \"\",    ti_id_generic: \"\",    ti_id_type_specific: \"\",    ti_id_specific: \"\",    ti_bu_code: \"\",    ti_bu_type: \"\",    ti_api_call_time: [{        suku:\"0\",        vijaya:\"9\"    },{        bala:\"0\",        raju:\"7\"    }]}");
            
            var fieldsCollector = new JsonFieldsCollector(json);
